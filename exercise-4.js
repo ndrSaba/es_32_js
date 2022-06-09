@@ -1,6 +1,9 @@
 function uncompletedNotes(notes) {
-  return notes.map(
-    ({ id, description, todos }) => ({ id, description, todos: todos.filter(nota => nota.done === false) })
+  return notes.map(({
+    id, description, todos
+  }) => ({
+    id, description, todos: todos.filter(nota => nota.done == false)
+  })
   )
 }
 
@@ -56,4 +59,4 @@ const notes = [
 
 const notesInProgress = uncompletedNotes(notes);
 console.log('All notes: ', notes);
-console.log('Notes In Progress: ', JSON.stringify(notesInProgress));
+console.log('Notes In Progress: ', notesInProgress);
